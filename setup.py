@@ -357,6 +357,8 @@ packages.append("sas.sasview")
 import re
 rx = re.compile(r'sas$|sas[.](?:data_util|dataloader|models|pr)\b')
 packages = [p for p in packages if rx.match(p)]
+# Avoid installing unused image files.
+del package_data['sas.models']
 
 # ----------------------------------------------------------------------------
 
