@@ -352,7 +352,7 @@ package_data['sas.sasview'] = ['images/*',
                                'default_categories.json']
 packages.append("sas.sasview")
 
-# Filter packages for srfit_sasview ------------------------------------------
+# Filter packages for srfit-sasview ------------------------------------------
 
 import re
 rx = re.compile(r'sas$|sas[.](?:data_util|dataloader|models|pr)\b')
@@ -381,7 +381,7 @@ else:
    
 # Set up SasView    
 setup(
-    name="srfit_sasview",
+    name="srfit-sasview",
     version = VERSION,
     description = "SasView application",
     author = "SasView Team",
