@@ -352,16 +352,6 @@ package_data['sas.sasview'] = ['images/*',
                                'default_categories.json']
 packages.append("sas.sasview")
 
-# Filter packages for srfit-sasview ------------------------------------------
-
-import re
-rx = re.compile(r'sas$|sas[.](?:data_util|dataloader|models|pr)\b')
-packages = [p for p in packages if rx.match(p)]
-# Avoid installing unused image files.
-del package_data['sas.models']
-
-# ----------------------------------------------------------------------------
-
 required = [
     'bumps>=0.7.5.6', 'periodictable>=1.3.1', 'pyparsing<2.0.0',
 
@@ -379,6 +369,18 @@ if os.name=='nt':
 else:
     required.extend(['pil'])
    
+# Filter packages for srfit-sasview ------------------------------------------
+
+import re
+rx = re.compile(r'sas$|sas[.](?:data_util|dataloader|models|pr)\b')
+packages = [p for p in packages if rx.match(p)]
+# Avoid installing unused image files.
+del package_data['sas.models']
+# Avoid installing any dependencies.
+required = []
+
+# ----------------------------------------------------------------------------
+
 # Set up SasView    
 setup(
     name="srfit-sasview",
