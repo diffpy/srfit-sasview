@@ -117,7 +117,7 @@ class TestLorentzian(unittest.TestCase):
         self.assertEqual(self.lor.run(1.0), 1.0)
         value = 0.25/(1+.25)
         self.assertEqual(self.lor.runXY([1.0,2.0]), value)
-        self.assertEqual(self.lor.runXY([2.0,2.0]), value*value)
+        self.assertAlmostEqual(self.lor.runXY([2.0,2.0]), value*value, 10)
         
     def test2Dphi(self):
         self.lor.setParam('scale', 0.5*math.pi)

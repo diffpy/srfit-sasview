@@ -60,7 +60,7 @@ class TestDisperser(unittest.TestCase):
         self.assertEqual(value_0, self.model.run([q, phi]))
         d = Disperser(self.model, ["cyl_phi", "cyl_theta"], [sigma, sigma])
         val_c = d.run([q, phi])
-        self.assertEqual(val_py, val_c)
+        self.assertAlmostEqual(val_py, val_c, 10)
         
     def test3Disp(self):
         q = 0.005
@@ -76,7 +76,7 @@ class TestDisperser(unittest.TestCase):
         d = Disperser(self.model, 
                       ["cyl_phi", "cyl_theta", 'radius'], [sigma, sigma, 1.0])
         val_c = d.run([q, phi])
-        self.assertEqual(val_py, val_c)
+        self.assertAlmostEqual(val_py, val_c, 10)
         
         
 class TestDisperserModel(unittest.TestCase):
@@ -99,7 +99,7 @@ class TestDisperserModel(unittest.TestCase):
         self.assertEqual(value_0, self.model.run([q, phi]))
         d = DisperseModel(self.model, ["cyl_phi", "cyl_theta"], [sigma, sigma])
         val_c = d.run([q, phi])
-        self.assertEqual(val_py, val_c)
+        self.assertAlmostEqual(val_py, val_c, 10)
 
 
 if __name__ == '__main__':

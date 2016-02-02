@@ -377,7 +377,7 @@ class TestSphere(unittest.TestCase):
         """
         self.assertTrue(math.fabs(self.model.run(0.001)-90412744456148.094)<=50.0)
         self.assertAlmostEqual(self.model.runXY([0.001,0.001]), 
-                               90347660670656.391, 1)
+                               90347660670656.391, delta=2)
 
     def test_dispersion(self):
         """

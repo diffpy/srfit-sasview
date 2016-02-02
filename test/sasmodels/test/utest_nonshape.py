@@ -503,8 +503,8 @@ class TestFractalModel(unittest.TestCase):
         x = 0.001
         
         iq = self._func(x)
-        self.assertEqual(self.model.run(x), iq)
-        self.assertEqual(self.model.runXY(x), iq)
+        self.assertAlmostEqual(self.model.run(x), iq, delta=2e-10)
+        self.assertAlmostEqual(self.model.runXY(x), iq, delta=5e-10)
     
     def test2D(self):
         x = 1.0
