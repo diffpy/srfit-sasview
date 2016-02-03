@@ -385,7 +385,7 @@ required = []
 setup(
     name="srfit-sasview",
     version = VERSION,
-    description = "SasView application",
+    description = "Selected modules from the SasView application.",
     author = "SasView Team",
     author_email = "developers@sasview.org",
     url = "http://sasview.org",
