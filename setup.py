@@ -172,12 +172,17 @@ package_dir["sas.guiframe"] = guiframe_path
 package_dir["sas.guiframe.local_perspectives"] = os.path.join(os.path.join(guiframe_path, "local_perspectives"))
 package_data["sas.guiframe"] = ['images/*', 'media/*']
 packages.extend(["sas.guiframe", "sas.guiframe.local_perspectives"])
+
+# DISABLE - sas.guiframe sources are not included in srfit-sasview -----------
+'''
 # build local plugin
 for d in os.listdir(os.path.join(guiframe_path, "local_perspectives")):
     if d not in ['.svn','__init__.py', '__init__.pyc']:
         package_name = "sas.guiframe.local_perspectives." + d
         packages.append(package_name)
         package_dir[package_name] = os.path.join(guiframe_path, "local_perspectives", d)
+'''
+# ----------------------------------------------------------------------------
 
 # sas.dataloader
 package_dir["sas.dataloader"] = os.path.join("src", "sas", "dataloader")
