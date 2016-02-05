@@ -22,8 +22,7 @@ except:
         sys.exit(0)
 
 # Manage version number ######################################
-import sasview
-VERSION = sasview.__version__
+VERSION = "3.1.2"
 ##############################################################
 
 package_dir = {}
