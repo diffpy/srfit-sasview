@@ -4,6 +4,24 @@ Release Notes
 1- Features
 ===========
 
+   - New in Version 3.1.2
+     --------------------
+     This release is a major stability improvement, having fixed a serious bug 
+     that came to light since release 3.1.1. All users should upgrade.
+
+     - Fixes bug #468 broken remove constraint buttons in 
+       simultaneous/constrained fitting panel
+     - Fixes bug #474 resulting from changes in 3.1.1 that had 
+       introduced an error in the high-Q of slit-smeared models.
+     - Fixes bug #478 which would cause wx to run out of IDs and result 
+       in SasView crashing even if left alone.
+     - Fixes bug #479 missing help button on simultaneous/constrained fit page
+     - Fixes bug #480 GUI resizing issues on simultaneous fit page
+     - Fixes bug #486 broken Report Results
+     - Fixes bug #488 redraw issues in fit page
+
+
+
    - New in Version 3.1.1
      --------------------
      - Fixes bug #457 that prevented SasView from starting if the user was not
@@ -254,11 +272,29 @@ Release Notes
         - We currently use Python 2.7
 
    2.2- Installing from source
-        - Get the code from GitHub at https://github.com/SasView/sasview.git
-          for this release version use: https://github.com/SasView/sasview/releases
-          - run 'python setup.py install' under the 'sasview-x.x.x' folder
+        - Get the source code
+          - to follow the current development version from source control use
+              git clone https://github.com/SasView/sasview.git
+              git clone https://github.com/bumps/bumps.git
+	  - to install a specific version
+
+        - Build, install and run a specific release
+          - make sure the requirements below are already installed
+          - retrieve the source from https://github.com/SasView/sasview/releases
+          - open a command line window in the 'sasview-x.x.x' directory
+          - run 'python setup.py install'
           - run 'python sasview.py' under the 'sasview' folder.
-          
+
+        - Build, install and run the current development version
+          - clone the source from git; also clone bumps, which is developed in parallel
+              git clone https://github.com/SasView/sasview.git
+              git clone https://github.com/bumps/bumps.git
+          - open a command line window in the 'sasview' directory
+          - run 'python setup.py build'
+          - run 'python run.py'; this runs from the source directories, so you
+            don't have to rebuild every time you make a change, unless you are
+            changing the C++ model files
+
         - The following modules are required (version numbers are what are used
           in the windows release build):
           
