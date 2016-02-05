@@ -1,0 +1,14 @@
+graft src/sas
+exclude src/sas/models/c_extension/c_models/c_models.cpp
+prune src/sas/models/c_extension/python_wrapper/generated
+prune src/sas/models/media
+prune src/sas/guiframe
+prune src/sas/plottools
+prune src/sas/fit
+prune src/sas/realspace
+prune src/sas/perspectives
+prune src/sas/simulation
+
+global-exclude *.pyc
+
+include README.md
