@@ -9,6 +9,10 @@ prune src/sas/realspace
 prune src/sas/perspectives
 prune src/sas/simulation
 
+graft test/sasdataloader
+graft test/sasmodels
+graft test/pr_inversion
+
 global-exclude *.pyc
 
 include README.md
