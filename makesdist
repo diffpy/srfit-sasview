@@ -11,6 +11,7 @@ import tempfile
 import subprocess
 import glob
 import tarfile
+import gzip
 import shutil
 
 BASEDIR = os.path.dirname(os.path.realpath(__file__))
@@ -48,7 +49,8 @@ if not os.path.isdir(outdir):
 taroutput = os.path.join(outdir, os.path.basename(tarinput) + '.gz')
 
 tfin = tarfile.open(tarinput)
-tfout = tarfile.open(taroutput, 'w:gz')
+fpout = gzip.GzipFile(taroutput, 'w', mtime=0)
+tfout = tarfile.open(fileobj=fpout, mode='w')
 
 
 def fixtarinfo(tinfo):
@@ -71,6 +73,7 @@ for ti in tfin:
     if isgenerated(tfin, ti):
         continue
     tfout.addfile(fixtarinfo(ti), tfin.extractfile(ti))
+tfin.close()
 print "[done]"
 
 inform("Remove temporary git clone")
