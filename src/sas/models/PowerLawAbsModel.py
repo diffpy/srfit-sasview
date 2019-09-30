@@ -1,4 +1,4 @@
-""" 
+r"""
     Provide F(x) = scale* (\|x\|)^(-m) + bkd
     Power law function as a BaseComponent model
 """
@@ -35,4 +35,3 @@ class PowerLawAbsModel(PowerLawModel):
         
     def _PowerLaw(self, x):
         return PowerLawModel._PowerLaw(self, math.fabs(x))
-       

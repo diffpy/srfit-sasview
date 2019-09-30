@@ -130,10 +130,10 @@ class Results(object):
 
         # Dictionary of outputs
         self.outputs = {}
-        self.outputs['Chi2/dof'] = ["\chi^2/dof", "a.u.", self.chi2]
+        self.outputs['Chi2/dof'] = [r"\chi^2/dof", "a.u.", self.chi2]
         self.outputs['Oscillation parameter'] = ["Osc", "a.u.", self.osc]
         self.outputs['Positive fraction'] = ["P^+", "a.u.", self.pos]
-        self.outputs['1-sigma positive fraction'] = ["P^+_{1\ \sigma}",
+        self.outputs['1-sigma positive fraction'] = [r"P^+_{1\ \sigma}",
                                                      "a.u.", self.pos_err]
         self.outputs['Rg'] = ["R_g", "A", self.rg]
         self.outputs['I(q=0)'] = ["I(q=0)", "1/A", self.iq0]
